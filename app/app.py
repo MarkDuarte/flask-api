@@ -2,6 +2,7 @@ from flask import Flask
 from routes.provider_routes import provider_routes
 from routes.product_routes import product_routes
 from routes.client_routes import client_routes
+from routes.purchase_routes import purchase_routes
 from models import db
 
 app = Flask(__name__)
@@ -16,6 +17,7 @@ with app.app_context():
 app.register_blueprint(provider_routes, url_prefix='/')
 app.register_blueprint(product_routes, url_prefix='/')
 app.register_blueprint(client_routes, url_prefix='/')
+app.register_blueprint(purchase_routes, url_prefix='/')
 
 
 if __name__ == '__main__':

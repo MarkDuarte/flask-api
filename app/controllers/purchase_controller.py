@@ -15,7 +15,7 @@ class PurchaseController:
         return result
     
     @staticmethod
-    def create_purchase(name):
-        purchase = Purchase(name=name)
+    def create_purchase(product_id, client_id):
+        purchase = Purchase(product_id=product_id, client_id=client_id)
         db.session.add(purchase)
         db.session.commit()
